@@ -1,0 +1,30 @@
+/* AI: Recipes - Cleanup */
+
+USE master
+GO
+
+DECLARE @SessionId int
+
+DECLARE curSession CURSOR FOR
+ SELECT session_id FROM sys.dm_exec_sessions WHERE database_id = DB_ID('RecipesDB') AND session_id <> @@SPID
+
+OPEN curSession
+FETCH NEXT FROM curSession INTO @SessionId
+
+WHILE @@FETCH_STATUS = 0
+BEGIN
+	PRINT CONCAT('KILL ', @SessionId)
+    EXEC ('KILL ' + @SessionId)
+    FETCH NEXT FROM curSession INTO @SessionId
+END
+
+CLOSE curSession
+DEALLOCATE curSession
+GO
+
+DROP DATABASE RecipesDB
+GO
+
+sp_configure 'external rest endpoint enabled', 0
+RECONFIGURE
+GO
