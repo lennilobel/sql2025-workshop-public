@@ -1,4 +1,4 @@
-/* AI: Movies - Create MovieAssistant Stored Procedure */
+/* AI: Movies - RAG Solution - Create MovieAssistant Stored Procedure */
 
 USE MoviesDB
 GO

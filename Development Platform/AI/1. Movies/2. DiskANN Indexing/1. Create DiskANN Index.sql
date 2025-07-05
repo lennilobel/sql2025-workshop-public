@@ -1,4 +1,4 @@
-/* AI: Movies - Create DiskANN Index */
+/* AI: Movies - DiskANN Indexing - Create DiskANN Index */
 
 USE MoviesDB
 GO

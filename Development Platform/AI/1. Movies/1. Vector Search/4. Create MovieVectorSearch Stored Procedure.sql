@@ -1,4 +1,4 @@
-/* AI: Movies - Create VectorSearch Stored Procedure */
+/* AI: Movies - Vector Search - Create VectorSearch Stored Procedure */
 
 USE MoviesDB
 GO

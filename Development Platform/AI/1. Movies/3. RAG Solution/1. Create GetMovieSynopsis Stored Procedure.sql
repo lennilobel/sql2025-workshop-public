@@ -1,4 +1,4 @@
-/* AI: Movies - Create GetMovieSynopsis Stored Procedure */
+/* AI: Movies - RAG Solution - Create GetMovieSynopsis Stored Procedure */
 
 USE MoviesDB
 GO

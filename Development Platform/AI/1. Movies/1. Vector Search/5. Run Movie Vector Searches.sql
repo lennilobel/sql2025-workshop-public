@@ -1,4 +1,4 @@
-/* AI: Movies - Run Movie Vector Searches */
+/* AI: Movies - Vector Search - Run Movie Vector Searches */
 
 USE MoviesDB
 GO

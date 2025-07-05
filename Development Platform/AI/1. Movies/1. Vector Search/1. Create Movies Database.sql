@@ -1,4 +1,4 @@
-/* AI: Movies - Create Movies Database */
+/* AI: Movies - Vector Search - Create Movies Database */
 
 USE master
 GO

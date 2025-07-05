@@ -1,4 +1,4 @@
-/* AI: Movies - Vectorize Movie Titles */
+/* AI: Movies - Vector Search - Vectorize Movie Titles */
 
 USE MoviesDB
 GO

@@ -1,4 +1,4 @@
-/* AI: Movies - Create MovieVectorSearchANN Stored Procedure */
+/* AI: Movies - DiskANN Indexing - Run Movie Vector ANN Searches */
 
 USE MoviesDB
 GO

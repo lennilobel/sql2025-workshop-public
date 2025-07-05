@@ -1,4 +1,4 @@
-/* AI: Movies - Run Movies Assistant */
+/* AI: Movies - RAG Solution - Run Movie Assistant */
 
 USE MoviesDB
 GO
