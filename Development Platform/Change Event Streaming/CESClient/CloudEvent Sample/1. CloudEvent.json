@@ -1,0 +1,13 @@
+{
+	"specversion": "1.0",
+	"type": "com.microsoft.SQL.CES.DML.V1",
+	"source": "\/",
+	"id": "cc3fcdca-09c0-4f46-a8d3-5d0c3c1eb85a",
+	"logicalid": "8376457a-17af-49f4-b9ea-0d5071f515f4:0000002C000007300011:00000000000000000002",
+	"time": "2025-06-30T12:29:46.290Z",
+	"datacontenttype": "application\/avro-json",
+	"operation": "UPD",
+	"segmentindex": 1,
+	"finalsegment": true,
+	"data": "{\n  \"eventsource\": {\n    \"db\": \"CesDemo\",\n    \"schema\": \"dbo\",\n    \"tbl\": \"Product\",\n    \"cols\": [\n      {\n        \"name\": \"ProductId\",\n        \"type\": \"int\",\n        \"index\": 0\n      },\n      {\n        \"name\": \"ItemsInStock\",\n        \"type\": \"smallint\",\n        \"index\": 5\n      }\n    ],\n    \"pkkey\": [\n      {\n        \"columnname\": \"ProductId\",\n        \"value\": \"2\"\n      }\n    ],\n    \"transaction\": {\n      \"commitlsn\": \"0000002C:00000730:0011\",\n      \"beginlsn\": \"0000002C:00000730:000C\",\n      \"sequencenumber\": 2,\n      \"committime\": \"2025-06-30T12:29:46.290Z\"\n    }\n  },\n  \"eventrow\": {\n    \"old\": \"{\\\"ProductId\\\": \\\"2\\\", \\\"ItemsInStock\\\": \\\"8\\\"}\",\n    \"current\": \"{\\\"ProductId\\\": \\\"2\\\", \\\"ItemsInStock\\\": \\\"7\\\"}\"\n  }\n}"
+}

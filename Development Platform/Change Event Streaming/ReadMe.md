@@ -42,6 +42,7 @@ Create an Azure Storage Account to manage consumer checkpoints.
   - Click `Create`
   - Go to Security + Networking > Access Keys
   - Show and copy the connection string (then paste to Notepad)
+	- A more secure alternative is to generate a limited-lifetime Shared Access Signature (SAS) token.
 
 
 ## Generate the SAS Token
@@ -52,8 +53,8 @@ Generate a Shared Access Signature (SAS) token for the Event Hub to allow SQL Se
 
   ```powershell
   $resourceGroupName = "ces-demos-rg"    # Replace with your Resource Group name
-  $namespaceName = "ces-namespace"       # Replace with your Event Hub Namespace   name
-  $eventHubName = "ces-hub"              # Replace with your Event Hubs instance   name
+  $namespaceName = "ces-namespace"       # Replace with your Event Hub Namespace name
+  $eventHubName = "ces-hub"              # Replace with your Event Hubs instance name
   $policyName = "ces-policy"             # Replace with the policy name
   ```
 

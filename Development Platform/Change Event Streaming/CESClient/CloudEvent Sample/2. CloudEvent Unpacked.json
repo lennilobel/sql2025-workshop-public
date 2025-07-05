@@ -1,0 +1,35 @@
+{
+	"eventsource": {
+		"db": "CesDemo",
+		"schema": "dbo",
+		"tbl": "Product",
+		"cols": [
+			{
+				"name": "ProductId",
+				"type": "int",
+				"index": 0
+			},
+			{
+				"name": "ItemsInStock",
+				"type": "smallint",
+				"index": 5
+			}
+		],
+		"pkkey": [
+			{
+				"columnname": "ProductId",
+				"value": "2"
+			}
+		],
+		"transaction": {
+			"commitlsn": "0000002C:00000730:0011",
+			"beginlsn": "0000002C:00000730:000C",
+			"sequencenumber": 2,
+			"committime": "2025-06-30T12:29:46.290Z"
+		}
+	},
+	"eventrow": {
+		"old": "{\"ProductId\": \"2\", \"ItemsInStock\": \"8\"}",
+		"current": "{\"ProductId\": \"2\", \"ItemsInStock\": \"7\"}"
+	}
+}

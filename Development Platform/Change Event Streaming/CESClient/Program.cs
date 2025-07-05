@@ -28,23 +28,23 @@ namespace CESClient
 				.Build();
 
 			var eventHubHostName = config["EventHub:HostName"];
-			var eventHubName = config["EventHub:Name"];
+			var eventHubName = config["EventHub:EventHubName"];
 			var eventHubSasToken = config["EventHub:SasToken"];
 
-			var blobStorageConnectionString = config["BlobStorage:ConnectionString"];
-			var blobStorageContainerName = config["BlobStorage:ContainerName"];
+			var blobStorageContainerUrl = config["BlobStorage:ContainerUrl"];
+			var blobStorageSasToken = config["BlobStorage:SasToken"];
 
 			// Say hello
 			Console.WriteLine("SQL Server 2025 Change Event Streaming Client");
 			Console.WriteLine();
 			Console.WriteLine($"Event Hub Configuration");
-			Console.WriteLine($"  Host name:          {eventHubHostName}");
-			Console.WriteLine($"  Hub name:           {eventHubName}");
-			Console.WriteLine($"  SAS token:          {eventHubSasToken.Substring(0, 80)}...");
+			Console.WriteLine($"  Host name:      {eventHubHostName}");
+			Console.WriteLine($"  Hub name:       {eventHubName}");
+			Console.WriteLine($"  SAS token:      {eventHubSasToken.Substring(0, 80)}...");
 			Console.WriteLine();
 			Console.WriteLine($"Blob Storage Configuration");
-			Console.WriteLine($"  Connection string:  {blobStorageConnectionString.Substring(0, 80)}...");
-			Console.WriteLine($"  Container name:     {blobStorageContainerName}");
+			Console.WriteLine($"  Container URL:  {blobStorageContainerUrl}");
+			Console.WriteLine($"  SAS token:      {blobStorageSasToken.Substring(0, 80)}...");
 			Console.WriteLine();
 			Console.WriteLine("Press any key to start.");
 			Console.ReadKey(intercept: true);
@@ -53,7 +53,10 @@ namespace CESClient
 			Console.Write("Initializing... ");
 
 			// Create a blob container client that the event processor will use for checkpointing
-			var storageClient = new BlobContainerClient(blobStorageConnectionString, blobStorageContainerName);
+			var storageClient = new BlobContainerClient(
+				new Uri(blobStorageContainerUrl),
+				new AzureSasCredential(blobStorageSasToken)
+			);
 
 			// Create an event processor client to process events in the event hub
 			var processor = new EventProcessorClient(

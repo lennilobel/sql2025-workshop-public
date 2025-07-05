@@ -1,7 +1,6 @@
 /* Prep */
 
 docker pull ubuntu
-docker pull mcr.microsoft.com/mssql/server:2017-latest
 docker pull mcr.microsoft.com/mssql/server:2019-latest
 docker pull mcr.microsoft.com/mssql/server:2022-latest
 docker pull mcr.microsoft.com/mssql/server:2025-latest
@@ -146,11 +145,11 @@ exit
 - cleanup containers
 
 
-/* SQL Server 2017 */
+/* SQL Server 2019 */
 
 docker run --help			(show -d and -p commands)
 
-docker run -d -v c:\temp:/tempvol -p 1401:1433 mcr.microsoft.com/mssql/server:2017-latest
+docker run -d -v c:\temp:/tempvol -p 1401:1433 mcr.microsoft.com/mssql/server:2019-latest
 
 docker ps -a				(repeat, up for a while, then crashes)
 
@@ -158,7 +157,7 @@ docker logs ##				(need the EULA)
 
 - https://hub.docker.com/_/microsoft-mssql-server
 
-docker run -d -v c:\temp:/tempvol -p 1401:1433 -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Big$ecret123" --name sql2017 mcr.microsoft.com/mssql/server:2017-latest
+docker run -d -v c:\temp:/tempvol -p 1401:1433 -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Big$ecret123" --name sql2019 mcr.microsoft.com/mssql/server:2019-latest
 
 docker logs ##				(keep hitting... shows all good)
 
@@ -170,19 +169,8 @@ docker logs ##				(keep hitting... shows all good)
 
 - Copy AW db files (.mdf, .ldf, and .bak) from C:\DB
 
-- Attach AdventureWorks2019.mdf from "/tempvol"
-   Fails, because this database works only on 2019+
-
-- Attach AdventureWorks2017.mdf from "/tempvol"
-   See data!
-
-
-/* SQL Server 2019 */
-
-docker run -d -v c:\temp:/tempvol -p 1402:1433 -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Big$ecret123" --name sql2019 mcr.microsoft.com/mssql/server:2019-latest
-
-- SSMS, connect to "localhost,1402"
-   no databases of course
+- Attach AdventureWorks2022.mdf from "/tempvol"
+   Fails, because this database works only on 2022+
 
 - Attach AdventureWorks2019.mdf from "/tempvol"
    See data!
@@ -190,7 +178,18 @@ docker run -d -v c:\temp:/tempvol -p 1402:1433 -e "ACCEPT_EULA=Y" -e "MSSQL_SA_P
 
 /* SQL Server 2022 */
 
-docker run -d -v c:\temp:/tempvol -p 1403:1433 -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Big$ecret123" --name sql2022 mcr.microsoft.com/mssql/server:2022-latest
+docker run -d -v c:\temp:/tempvol -p 1402:1433 -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Big$ecret123" --name sql2022 mcr.microsoft.com/mssql/server:2022-latest
+
+- SSMS, connect to "localhost,1402"
+   no databases of course
+
+- Attach AdventureWorks2022.mdf from "/tempvol"
+   See data!
+
+
+/* SQL Server 2025 */
+
+docker run -d -v c:\temp:/tempvol -p 1403:1433 -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Big$ecret123" --name sql2025 mcr.microsoft.com/mssql/server:2025-latest
 
 docker ps		(all three are running)
 
@@ -218,8 +217,3 @@ notepad c:\users\lenni.wslconfig
  [wsl2]
  memory=3GB   # Limits VM memory in WSL 2 up to 3GB
  processors=4 # Makes the WSL 2 VM use two virtual processors
-
-
- /* SQL Server 2025 */
-
-docker run -d -v c:\temp:/tempvol -p 1404:1433 -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Big$ecret123" --name sql2025 mcr.microsoft.com/mssql/server:2025-latest
