@@ -33,7 +33,7 @@ UPDATE Customer SET City = 'New Mexico' WHERE CustomerId = 1
 UPDATE Product SET UnitPrice = UnitPrice * 0.8 WHERE Category = 'Camera'
 
 -- Batch delete products
-DELETE FROM Product WHERE Color = 'Black'
+DELETE FROM Product WHERE Category = 'Camera'
 
 -- With no PK on the table, and and not including "all columns", only the changed value will be sent; without a PK, this is useless
 UPDATE TableWithNoPK SET ItemName = 'Stove' WHERE Id = 3

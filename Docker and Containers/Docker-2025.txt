@@ -198,6 +198,8 @@ docker ps		(all three are running)
 - Restore AdventureWorks2019.bak from "/tempvol"
    See data!
 
+docker update --restart=always sql2025
+
 
 /* Custom dockerfile with PolyBase and FTS */
 

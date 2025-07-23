@@ -45,6 +45,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Change Event Streaming", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CESClient", "Development Platform\Change Event Streaming\CESClient\CESClient.csproj", "{D87096B1-3DE9-4516-9470-6DE6706533AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CESFunction", "Development Platform\Change Event Streaming\CESFunction\CESFunction.csproj", "{B04594E4-6143-40F7-90CD-A39C3433B241}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -157,6 +159,14 @@ Global
 		{D87096B1-3DE9-4516-9470-6DE6706533AD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D87096B1-3DE9-4516-9470-6DE6706533AD}.Release|x86.ActiveCfg = Release|Any CPU
 		{D87096B1-3DE9-4516-9470-6DE6706533AD}.Release|x86.Build.0 = Release|Any CPU
+		{B04594E4-6143-40F7-90CD-A39C3433B241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B04594E4-6143-40F7-90CD-A39C3433B241}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B04594E4-6143-40F7-90CD-A39C3433B241}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B04594E4-6143-40F7-90CD-A39C3433B241}.Debug|x86.Build.0 = Debug|Any CPU
+		{B04594E4-6143-40F7-90CD-A39C3433B241}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B04594E4-6143-40F7-90CD-A39C3433B241}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B04594E4-6143-40F7-90CD-A39C3433B241}.Release|x86.ActiveCfg = Release|Any CPU
+		{B04594E4-6143-40F7-90CD-A39C3433B241}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -176,6 +186,7 @@ Global
 		{222A26C2-66FA-4B8F-88E0-E0B863E8122D} = {C7067F32-F3E0-4E0A-8849-A7D2E0F19160}
 		{6271DB0D-89F1-45BC-AABF-833199DA8754} = {6CA50E98-105B-4742-A624-2ADB8BDB08DC}
 		{D87096B1-3DE9-4516-9470-6DE6706533AD} = {B4DF7A01-F9C4-4BFB-8145-A488A347BF6B}
+		{B04594E4-6143-40F7-90CD-A39C3433B241} = {B4DF7A01-F9C4-4BFB-8145-A488A347BF6B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {875EDF48-533B-4143-B7E5-38ABDE9F58C4}

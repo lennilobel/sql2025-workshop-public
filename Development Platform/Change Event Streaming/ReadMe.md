@@ -9,7 +9,8 @@ Create and configure an Azure Event Hub to receive change events from SQL Server
 - Create a resource > Event Hubs
   - Resource Group: `ces-demos-rg`
   - Namespace Name: `ces-namespace`
-  - Pricing Tier: **Basic**
+  - Pricing Tier: `Basic`
+  - Throughput Units: `1`
   - Create and go to resource
 
 - Create Event Hub
@@ -30,7 +31,7 @@ Create an Azure Storage Account to manage consumer checkpoints.
 
 - Create a resource > Storage Account
   - Resource Group: `ces-demos-rg`
-  - Storage account name: `sql2025ces`
+  - Storage account name: `cesdemostorage`
   - Primary service: `Azure Blob Storage or Azure Data Lake Storage Gen2`
   - Redundancy: `Locally redundant storage (LRS)`
   - Create and go to resource
@@ -51,12 +52,15 @@ Generate a Shared Access Signature (SAS) token for the Event Hub to allow SQL Se
 
 - Edit Generate-SasToken.ps1
 
-  ```powershell
-  $resourceGroupName = "ces-demos-rg"    # Replace with your Resource Group name
-  $namespaceName = "ces-namespace"       # Replace with your Event Hub Namespace name
-  $eventHubName = "ces-hub"              # Replace with your Event Hubs instance name
-  $policyName = "ces-policy"             # Replace with the policy name
-  ```
+	```powershell
+	$subscriptionId = "6327c571-12f0-4634-9d3e-404ad37e6be9"    # Replace with Azure Subscription Id
+	$resourceGroupName = "ces-demos-rg"                         # Replace with your Resource Group name
+	$namespaceName = "ces-namespace"                            # Replace with your Event Hub Namespace name
+	$eventHubName = "ces-hub"                                   # Replace with your Event Hubs instance name
+	$policyName = "ces-policy"                                  # Replace with the policy name
+
+	Connect-AzAccount -TenantId d094d040-1e16-4c87-9d7e-ba1b8efa9b29
+	```
 
 - Run PowerShell as administrator
 
@@ -93,14 +97,20 @@ Generate a Shared Access Signature (SAS) token for the Event Hub to allow SQL Se
   .\Generate-SasToken.ps1
   ```
 
-  When prompted, sign in with your Azure account.
-	 
-  If you have multiple subscriptions, select the subscription that contains the Event Hub Namespace.
+```plaintext
+Resource Group               ces-demos-rg
 
-- Copy the generated SAS token to Notepad
-  ```powershell
-  SharedAccessSignature sr=...&skn=ces-policy
-  ```
+EventHub
+  EventHub Namespace Name    ces-namespace
+  EventHub Name              ces-hub
+  EventHub Policy (Manage)   ces-policy
+  EventHub SAS Token         SharedAccessSignature [SAS-TOKEN]
+
+Storage Account
+  Storage Account            cesdemostorage
+  Blob Container             ces-blob
+  Connection String          DefaultEndpointsProtocol=[CONNECTION-STRING]
+```
 
 ## References
 

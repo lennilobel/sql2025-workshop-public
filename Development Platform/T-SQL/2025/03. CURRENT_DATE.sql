@@ -6,8 +6,8 @@ USE MyDB
 GO
 
 -- CURRENT_DATE is a simple ANSI-compliant function that returns the current date in the format 'YYYY-MM-DD'.
-SELECT CURRENT_DATE AS CurrentDate
+SELECT CurrentDate = CURRENT_DATE
 
 -- CURRENT_DATE is equivalent to:
-SELECT CAST(SYSDATETIME() AS date) AS CurrentDate
+SELECT CurrentDate = CAST(SYSDATETIME() AS date)
 

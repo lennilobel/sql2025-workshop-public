@@ -1,5 +1,8 @@
 /* Change Event Streaming - Configure CES */
 
+USE CesDemo
+GO
+
 -- Enable CES
 SELECT * FROM sys.databases WHERE is_event_stream_enabled = 1
 

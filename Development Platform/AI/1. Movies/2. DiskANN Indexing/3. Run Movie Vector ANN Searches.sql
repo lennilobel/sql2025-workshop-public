@@ -3,11 +3,6 @@
 USE MoviesDB
 GO
 
-/* AI: Movies - Run Movie Vector ANN Searches */
-
-USE MoviesDB
-GO
-
 -- Movie phrases
 EXEC MovieVectorSearchANN 'May the force be with you'
 EXEC MovieVectorSearchANN 'I''m gonna make him an offer he can''t refuse'
