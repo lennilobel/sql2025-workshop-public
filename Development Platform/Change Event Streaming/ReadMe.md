@@ -104,12 +104,12 @@ EventHub
   EventHub Namespace Name    ces-namespace
   EventHub Name              ces-hub
   EventHub Policy (Manage)   ces-policy
-  EventHub SAS Token         SharedAccessSignature [SAS-TOKEN]
+  EventHub SAS Token         SharedAccessSignature ...
 
 Storage Account
   Storage Account            cesdemostorage
   Blob Container             ces-blob
-  Connection String          DefaultEndpointsProtocol=[CONNECTION-STRING]
+  Connection String          DefaultEndpointsProtocol=...
 ```
 
 ## References
